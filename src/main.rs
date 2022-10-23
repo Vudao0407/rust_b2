@@ -13,31 +13,31 @@
 // for every `i`, `left[i] - right[i] == rv[i]`. Note that the implementation
 // assumes that `left.len() == right.len()`.
 
-fn vec_diff(left: &Vec<i32>, right: &Vec<i32>) -> Vec<i32> {
-    let mut rv = Vec::new();
-    for (l, r) in left.iter().zip(right.iter()) {
-        rv.push(l - r);
-    }
-    return rv;
-}
+// fn vec_diff(left: &Vec<i32>, right: &Vec<i32>) -> Vec<i32> {
+//     let mut rv = Vec::new();
+//     for (l, r) in left.iter().zip(right.iter()) {
+//         rv.push(l - r);
+//     }
+//     return rv;
+// }
 
-/// Returns true if and only if all elements in `vec` are equal to `value`.
-fn all(vec: Vec<i32>, value: i32) -> bool {
-    for elem in vec.iter() {
-        if *elem != value {
-            return false;
-        }
-    }
-    return true;
-}
+// /// Returns true if and only if all elements in `vec` are equal to `value`.
+// fn all(vec: Vec<i32>, value: i32) -> bool {
+//     for elem in vec.iter() {
+//         if *elem != value {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
-fn main() {
-    let v1 = vec![0, 1, 2];
-    let v2 = vec![3, 4, 5];
-    let diff = vec_diff(&v2, &v1);
-    let diff2  = vec_diff(&diff, &v1);
-    println!("{:?}", all(diff, 3));
-}
+// fn main() {
+//     let v1 = vec![0, 1, 2];
+//     let v2 = vec![3, 4, 5];
+//     let diff = vec_diff(&v2, &v1);
+//     let diff2  = vec_diff(&diff, &v1);
+//     println!("{:?}", all(diff, 3));
+// }
 
 
 
@@ -64,14 +64,16 @@ fn main() {
 
 //     let mut additions: Vec<usize> = vec![0];
 
-//     while additions.len() > 0 {
-//         let mut addition: f64 = 0.0;
-//         let mut saltar: i32 = 0;
-//         for element_index in &additions {
-//             let addition_aux = values[*element_index];
-//             addition = addition_aux + addition;
-//         }
-//     }
+//     println!("{:?}", values_number);
+
+    // while additions.len() > 0 {
+    //     let mut addition: f64 = 0.0;
+    //     let mut saltar: i32 = 0;
+    //     for element_index in &additions {
+    //         let addition_aux = values[*element_index];
+    //         addition = addition_aux + addition;
+    //     }
+    // }
 
 
 
@@ -141,18 +143,18 @@ fn main() {
 // =====================================
 
 
-// fn main() {
-//     let mut v = vec![1, 2, 3];
+fn main() {
+    let mut v = vec![1, 2, 3];
 
-//     go(&mut v);
+    go(&mut v);
 
-//     // still need v here, so I can't pass ownership to the "go' method above
-//     println!("{}", v.len())
-// }
+    // still need v here, so I can't pass ownership to the "go' method above
+    println!("{}", v.len())
+}
 
-// fn go(v: &mut Vec<i32>) {
-//     for i in &mut *v {
-//         println!("{}", i);
-//     }
-//     v.push(4);
-// }
+fn go(v: &mut Vec<i32>) {
+    for i in &mut *v {
+        println!("{}", i);
+    }
+    v.push(4);
+}
